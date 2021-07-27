@@ -4,11 +4,11 @@ from . import views
 
 app_name = 'polls'
 urlpatterns = [
-    path('', views.IndexView, name='index'),
+    path('', views.IndexView.as_view(), name='index'),
 
-    path('specifics/<int:pk>', views.DetailView, name='detail'),
+    path('specifics/<int:pk>', views.DetailView.as_view(), name='detail'),
 
-    path('<int:pk>/results/', views.ResultsView, name='results'),
+    path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
 
     # path('', views.index, name='index'),
     #
